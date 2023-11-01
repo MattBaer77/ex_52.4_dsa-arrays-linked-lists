@@ -130,11 +130,11 @@ class LinkedList {
 
     while(idx != currentIdx) {
 
-      console.log(currentNode)
-      console.log(currentIdx)
+      // console.log(currentNode)
+      // console.log(currentIdx)
 
       if(!currentNode.next){
-        console.log("FIRST RETURN")
+        // console.log("FIRST RETURN")
         break
       }
 
@@ -143,9 +143,9 @@ class LinkedList {
 
     }
 
-    console.log("OUT OF LOOP")
+    // console.log("OUT OF LOOP")
 
-    console.log(`${currentIdx} - ${idx}`)
+    // console.log(`${currentIdx} - ${idx}`)
 
     if (currentIdx != idx){
       return null
@@ -159,11 +159,79 @@ class LinkedList {
 
   setAt(idx, val) {
 
+    if (!this.head){
+      return null
+    }
+
+    let currentIdx = 0
+    let currentNode = this.head
+
+    while(idx != currentIdx) {
+
+      // console.log(currentNode)
+      // console.log(currentIdx)
+
+      if(!currentNode.next){
+        // console.log("FIRST RETURN")
+        break
+      }
+
+      currentNode = currentNode.next
+      currentIdx ++
+
+    }
+
+    // console.log("OUT OF LOOP")
+
+    // console.log(`${currentIdx} - ${idx}`)
+
+    if (currentIdx != idx){
+      return null
+    }
+
+    currentNode.val = val
+
+    return currentNode.val
+
   }
 
   /** insertAt(idx, val): add node w/val before idx. */
 
   insertAt(idx, val) {
+
+    // if (!this.head){
+    //   return null
+    // }
+
+    // let currentIdx = 0
+    // let currentNode = this.head
+
+    // while(idx != currentIdx) {
+
+    //   // console.log(currentNode)
+    //   // console.log(currentIdx)
+
+    //   if(!currentNode.next){
+    //     // console.log("FIRST RETURN")
+    //     break
+    //   }
+
+    //   currentNode = currentNode.next
+    //   currentIdx ++
+
+    // }
+
+    // // console.log("OUT OF LOOP")
+
+    // // console.log(`${currentIdx} - ${idx}`)
+
+    // if (currentIdx != idx){
+    //   return null
+    // }
+
+    // currentNode.val = val
+
+    // return currentNode.val
 
   }
 
