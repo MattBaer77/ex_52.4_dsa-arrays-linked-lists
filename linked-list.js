@@ -66,27 +66,31 @@ class LinkedList {
 
   pop() {
 
-    // console.log(this)
+    let currentNode = this.head
+    let previousNode = null
 
-    // let currentNode = this.head
-    // let previousNode = null
+    while(currentNode.next){
 
-    // while(currentNode.next){
+      previousNode = currentNode
+      currentNode = currentNode.next
 
-    //   console.log(currentNode)
-    //   console.log(previousNode)
+    }
 
-    //   // previousNode = currentNode
-    //   // currentNode = currentNode.next
-    //   currentNode = 42
+    if (previousNode) {
 
-    // }
+      previousNode.next = null
 
-    // console.log(previousNode)
-    // console.log(currentNode)
+    }
 
-    // // previousNode.next = null
-    // // this.length --
+    if (!previousNode) {
+
+      this.head = null
+
+    }
+
+    this.tail = previousNode
+    this.length --
+    return currentNode.val
 
   }
 
