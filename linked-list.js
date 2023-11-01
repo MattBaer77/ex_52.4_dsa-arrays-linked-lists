@@ -22,18 +22,20 @@ class LinkedList {
 
   push(val) {
 
-    const newNode = new Node(val);
+    const newNode = new Node(val, this.head);
 
     if (!this.head) {
 
       this.head = newNode
 
-    } else {
+    }
+
+    if (this.tail) {
 
       this.tail.next = newNode
 
     }
-
+    
     this.tail = newNode
     this.length ++
 
