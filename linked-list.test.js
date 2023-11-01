@@ -77,14 +77,32 @@ describe("shift", function() {
   });
 });
 
-// describe("getAt", function() {
-//   it("gets val at index", function() {
-//     let lst = new LinkedList([5, 10]);
+describe("getAt", function() {
+  it("gets val at index", function() {
+    let lst = new LinkedList([5, 10, 15]);
 
-//     expect(lst.getAt(0)).toBe(5);
-//     expect(lst.getAt(1)).toBe(10);
-//   });
-// });
+    expect(lst.getAt(0)).toBe(5);
+    expect(lst.getAt(1)).toBe(10);
+    expect(lst.getAt(2)).toBe(15);
+
+    lst.pop()
+
+    expect(lst.getAt(0)).toBe(5);
+    expect(lst.getAt(1)).toBe(10);
+    expect(lst.getAt(2)).toBe(null);
+
+    lst.pop()
+
+    expect(lst.getAt(0)).toBe(5);
+    expect(lst.getAt(1)).toBe(null);
+
+    lst.pop()
+
+    expect(lst.getAt(0)).toBe(null);
+    expect(lst.getAt(1)).toBe(null);
+
+  });
+});
 
 // describe("setAt", function() {
 //   it("sets val at index", function() {

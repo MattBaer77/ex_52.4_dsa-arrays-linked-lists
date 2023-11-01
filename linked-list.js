@@ -112,7 +112,7 @@ class LinkedList {
 
     this.head = this.head.next
     this.length --
-    
+
     return removedHead.val
 
   }
@@ -120,6 +120,38 @@ class LinkedList {
   /** getAt(idx): get val at idx. */
 
   getAt(idx) {
+
+    if (!this.head){
+      return null
+    }
+
+    let currentIdx = 0
+    let currentNode = this.head
+
+    while(idx != currentIdx) {
+
+      console.log(currentNode)
+      console.log(currentIdx)
+
+      if(!currentNode.next){
+        console.log("FIRST RETURN")
+        break
+      }
+
+      currentNode = currentNode.next
+      currentIdx ++
+
+    }
+
+    console.log("OUT OF LOOP")
+
+    console.log(`${currentIdx} - ${idx}`)
+
+    if (currentIdx != idx){
+      return null
+    }
+
+    return currentNode.val
 
   }
 
