@@ -49,7 +49,6 @@ class LinkedList {
   unshift(val) {
 
     const newNode = new Node(val, this.head);
-    // console.log(newNode)
 
     if (!this.head) {
 
@@ -130,11 +129,7 @@ class LinkedList {
 
     while(idx != currentIdx) {
 
-      // console.log(currentNode)
-      // console.log(currentIdx)
-
       if(!currentNode.next){
-        // console.log("FIRST RETURN")
         break
       }
 
@@ -142,10 +137,6 @@ class LinkedList {
       currentIdx ++
 
     }
-
-    // console.log("OUT OF LOOP")
-
-    // console.log(`${currentIdx} - ${idx}`)
 
     if (currentIdx != idx){
       return null
@@ -168,11 +159,7 @@ class LinkedList {
 
     while(idx != currentIdx) {
 
-      // console.log(currentNode)
-      // console.log(currentIdx)
-
       if(!currentNode.next){
-        // console.log("FIRST RETURN")
         break
       }
 
@@ -180,10 +167,6 @@ class LinkedList {
       currentIdx ++
 
     }
-
-    // console.log("OUT OF LOOP")
-
-    // console.log(`${currentIdx} - ${idx}`)
 
     if (currentIdx != idx){
       return null
@@ -218,11 +201,7 @@ class LinkedList {
 
     while(idx != currentIdx) {
 
-      // console.log(currentNode)
-      // console.log(currentIdx)
-
       if(!currentNode.next){
-        // console.log("FIRST RETURN")
         break
       }
 
@@ -232,16 +211,10 @@ class LinkedList {
 
     }
 
-    // console.log("OUT OF LOOP")
-
-    // console.log(`${currentIdx} - ${idx}`)
-
     if (currentIdx != idx){
 
       if (currentNode == this.tail) {
 
-        // console.log("TAIL INSERT")
-        // console.log(currentNode)
         currentNode.next = newNode
         this.tail = newNode
   
@@ -250,17 +223,10 @@ class LinkedList {
       return undefined
     }
 
-    // console.log(currentNode)
-    // console.log(this.tail)
-
-    // console.log(this)
-
     newNode.next = currentNode
     previousNode.next = newNode
 
     this.length ++
-
-    // console.log(this)
 
     return newNode.val
 
@@ -280,12 +246,7 @@ class LinkedList {
 
     while(idx != currentIdx) {
 
-      // console.log(previousNode)
-      // console.log(currentNode)
-      // console.log(currentIdx)
-
       if(!currentNode.next){
-        // console.log("FIRST RETURN")
         break
       }
 
@@ -295,31 +256,21 @@ class LinkedList {
 
     }
 
-    // console.log("OUT OF LOOP")
-
-    // console.log(`${currentIdx} - ${idx}`)
-
     if (currentIdx != idx){
       return null
     }
 
     if (!previousNode && !currentNode.next) {
 
-      // console.log("NO PREVIOUS")
-
       this.head = null
       this.tail = null
       this.length = 0
-
-      // console.log(this)
 
       return currentNode.val
 
     }
 
     if (currentNode === this.head) {
-
-      // console.log("NO PREVIOUS 2")
 
       this.head = currentNode.next
       this.length --
@@ -330,8 +281,6 @@ class LinkedList {
 
     if (currentNode === this.tail) {
 
-      // console.log("NO NEXT")
-
       this.tail = previousNode
       this.length --
 
@@ -339,13 +288,8 @@ class LinkedList {
 
     }
 
-    // console.log(this)
-
-
     previousNode.next = currentNode.next
     this.length --
-
-    // console.log(this)
 
     return currentNode.val
 
@@ -367,8 +311,6 @@ class LinkedList {
 
       total = total + currentNode.val
       count ++
-      console.log(count)
-      console.log(total)
 
       currentNode = currentNode.next
 
