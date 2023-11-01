@@ -10,19 +10,22 @@ class Node {
 /** LinkedList: chained together nodes. */
 
 class LinkedList {
+
   constructor(vals = []) {
+
     this.head = null;
     this.tail = null;
     this.length = 0;
 
     for (let val of vals) this.push(val);
+
   }
 
   /** push(val): add new value to end of list. */
 
   push(val) {
 
-    const newNode = new Node(val, this.head);
+    const newNode = new Node(val);
 
     if (!this.head) {
 
@@ -35,7 +38,7 @@ class LinkedList {
       this.tail.next = newNode
 
     }
-    
+
     this.tail = newNode
     this.length ++
 
@@ -46,7 +49,7 @@ class LinkedList {
   unshift(val) {
 
     const newNode = new Node(val, this.head);
-    console.log(newNode)
+    // console.log(newNode)
 
     if (!this.head) {
 
@@ -62,6 +65,28 @@ class LinkedList {
   /** pop(): return & remove last item. */
 
   pop() {
+
+    // console.log(this)
+
+    // let currentNode = this.head
+    // let previousNode = null
+
+    // while(currentNode.next){
+
+    //   console.log(currentNode)
+    //   console.log(previousNode)
+
+    //   // previousNode = currentNode
+    //   // currentNode = currentNode.next
+    //   currentNode = 42
+
+    // }
+
+    // console.log(previousNode)
+    // console.log(currentNode)
+
+    // // previousNode.next = null
+    // // this.length --
 
   }
 
