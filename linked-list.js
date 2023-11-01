@@ -98,6 +98,23 @@ class LinkedList {
 
   shift() {
 
+    const removedHead = this.head
+
+    if (!this.head.next) {
+
+      this.head = null
+      this.tail = null
+      this.length --
+
+      return removedHead.val
+
+    }
+
+    this.head = this.head.next
+    this.length --
+    
+    return removedHead.val
+
   }
 
   /** getAt(idx): get val at idx. */
