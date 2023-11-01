@@ -148,19 +148,53 @@ describe("insertAt", function() {
     expect(lst.head.val).toBe(5);
     expect(lst.tail.val).toBe(5);
   });
-  
+
 });
 
-// describe("removeAt", function() {
-//   it("removes from 1-item list", function() {
-//     let lst = new LinkedList(["a"]);
+describe("removeAt", function() {
+  it("removes from 1-item list", function() {
 
-//     lst.removeAt(0);
-//     expect(lst.length).toBe(0);
-//     expect(lst.head).toBe(null);
-//     expect(lst.tail).toBe(null);
-//   });
-// });
+    let lst = new LinkedList(["a"]);
+    expect(lst.removeAt(0)).toBe("a");
+    expect(lst.length).toBe(0);
+    expect(lst.head).toBe(null);
+    expect(lst.tail).toBe(null);
+
+    lst = new LinkedList(["a", "b", "c"])
+    expect(lst.removeAt(1)).toBe("b")
+    expect(lst.length).toBe(2);
+    expect(lst.head.val).toBe("a");
+    expect(lst.head.next.val).toBe("c")
+    expect(lst.tail.val).toBe("c");
+
+    lst = new LinkedList(["a", "b", "c"])
+    expect(lst.removeAt(0)).toBe("a")
+    expect(lst.length).toBe(2);
+    expect(lst.head.val).toBe("b");
+    expect(lst.head.next.val).toBe("c");
+    expect(lst.tail.val).toBe("c");
+
+    lst = new LinkedList(["a", "b", "c"])
+    expect(lst.removeAt(2)).toBe("c")
+    expect(lst.length).toBe(2);
+    expect(lst.head.val).toBe("a");
+    expect(lst.head.next.val).toBe("b");
+    expect(lst.tail.val).toBe("b");
+
+    lst = new LinkedList(["a", "b", "c"])
+    expect(lst.removeAt(3)).toBe(null)
+    expect(lst.length).toBe(3);
+    expect(lst.head.val).toBe("a");
+    expect(lst.head.next.val).toBe("b");
+    expect(lst.tail.val).toBe("c");
+
+    lst = new LinkedList()
+    expect(lst.removeAt(0)).toBe(null)
+    expect(lst.length).toBe(0);
+    expect(lst.head).toBe(null);
+
+  });
+});
 
 // describe("average", function() {
 //   it("calculates the average of items in a list", function() {
