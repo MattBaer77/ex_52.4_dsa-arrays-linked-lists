@@ -199,39 +199,70 @@ class LinkedList {
 
   insertAt(idx, val) {
 
-    // if (!this.head){
-    //   return null
-    // }
+    const newNode = new Node(val)
 
-    // let currentIdx = 0
-    // let currentNode = this.head
+    if (!this.head){
 
-    // while(idx != currentIdx) {
+      this.head = newNode
+      this.tail = newNode
 
-    //   // console.log(currentNode)
-    //   // console.log(currentIdx)
+      this.length ++
+      
+      return undefined
 
-    //   if(!currentNode.next){
-    //     // console.log("FIRST RETURN")
-    //     break
-    //   }
+    }
 
-    //   currentNode = currentNode.next
-    //   currentIdx ++
+    let currentIdx = 0
+    let currentNode = this.head
+    let previousNode = null
 
-    // }
+    while(idx != currentIdx) {
 
-    // // console.log("OUT OF LOOP")
+      console.log(currentNode)
+      console.log(currentIdx)
 
-    // // console.log(`${currentIdx} - ${idx}`)
+      if(!currentNode.next){
+        console.log("FIRST RETURN")
+        break
+      }
 
-    // if (currentIdx != idx){
-    //   return null
-    // }
+      previousNode = currentNode
+      currentNode = currentNode.next
+      currentIdx ++
 
-    // currentNode.val = val
+    }
 
-    // return currentNode.val
+    console.log("OUT OF LOOP")
+
+    console.log(`${currentIdx} - ${idx}`)
+
+    if (currentIdx != idx){
+
+      if (currentNode == this.tail) {
+
+        console.log("TAIL INSERT")
+        console.log(currentNode)
+        currentNode.next = newNode
+        this.tail = newNode
+  
+      }
+
+      return undefined
+    }
+
+    console.log(currentNode)
+    console.log(this.tail)
+
+    console.log(this)
+
+    newNode.next = currentNode
+    previousNode.next = newNode
+
+    this.length ++
+
+    console.log(this)
+
+    return newNode.val
 
   }
 
